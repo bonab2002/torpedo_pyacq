@@ -18,7 +18,7 @@ if sys.platform.startswith('win'):
         _cbw = ctypes.windll.cbw32
         HAVE_MC = True
         #~ print('cbw32')
-    except WindowsError:
+    except Exception: #this was changed from original pyacq
         try:
             _cbw = ctypes.windll.cbw64
             HAVE_MC = True
